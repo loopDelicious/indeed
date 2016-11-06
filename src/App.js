@@ -51,13 +51,11 @@ class App extends Component {
                         this.setState({
                             [location + language]: res.totalResults
                         });
-                        console.log(location, language, res.totalResults);
+                        console.log(location, language, res);
                     }
                 });
             });
         });
-
-        console.log('done');
     };
 
     render() {
