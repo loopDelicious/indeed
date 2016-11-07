@@ -32,3 +32,8 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
+.graph {
+    width: 75%;
+    margin: 20px;
+}
+

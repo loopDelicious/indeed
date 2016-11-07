@@ -51,10 +51,12 @@ class App extends Component {
                         format: format
                     },
                     success: (res) => {
-                        this.setState({
-                            [location + language]: res.totalResults
-                        });
-                        console.log(location, language, res);
+                        if (!this.state[location]) {
+                            this.state[location] = {}
+                        }
+                        this.state[location][language] = res.totalResults;
+
+                        this.setState(this.state);
                     }
                 });
             });
@@ -74,7 +76,7 @@ class App extends Component {
         var rows = this.locations.map( (location) => {
 
             var languageValues = this.languages.map( (language) => {
-                return <td key={language}>{this.state[location + language]}</td>
+                return <td key={language}>{this.state[location] ? this.state[location][language] : null}</td>
             });
 
             return (
@@ -99,7 +101,12 @@ class App extends Component {
                         {rows}
                     </tbody>
                 </table>
-                <Graph graphCallback={this.drawGraph} languages={this.languages} results={this.state} />
+                <Graph
+                    graphCallback={this.drawGraph}
+                    languages={this.languages}
+                    locations={this.locations}
+                    results={this.state}
+                />
             </div>
         );
     }
