@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import $ from 'jquery';
 import Graph from './graph.js';
+import City from './city.js';
 
 class App extends Component {
 
@@ -12,7 +13,12 @@ class App extends Component {
 
     state = {};
 
+    langs = [];
+
     componentDidMount = () => {
+
+        // library is mutating original language array
+        this.langs = JSON.parse(JSON.stringify(this.languages));
 
         var site_type = "employer";  // Site type. To show only jobs from job boards use "jobsite". For jobs from direct employer websites use "employer".
         var job_type = "fulltime";  // 	Job type. Allowed values: "fulltime", "parttime", "contract", "internship", "temporary".
@@ -63,10 +69,6 @@ class App extends Component {
         });
     };
 
-    drawGraph = () => {
-
-    };
-
     render() {
 
         var columnHeaders = this.languages.map( (language) => {
@@ -76,7 +78,7 @@ class App extends Component {
         var rows = this.locations.map( (location) => {
 
             var languageValues = this.languages.map( (language) => {
-                return <td key={language}>{this.state[location] ? this.state[location][language] : null}</td>
+                return <td key={'table'+language}>{this.state[location] ? this.state[location][language] : null}</td>
             });
 
             return (
@@ -89,6 +91,8 @@ class App extends Component {
 
         return (
             <div className="App">
+                <h2>Job Postings by Programming Language</h2>
+                <p>Number of job postings within the last 15 days on indeed.com (results cached daily). Full time positions from direct employer websites.  </p>
                 <table>
                     <thead>
                         <tr>
@@ -101,9 +105,15 @@ class App extends Component {
                         {rows}
                     </tbody>
                 </table>
+
                 <Graph
-                    graphCallback={this.drawGraph}
                     languages={this.languages}
+                    locations={this.locations}
+                    results={this.state}
+                />
+
+                <City
+                    languages={this.langs}
                     locations={this.locations}
                     results={this.state}
                 />

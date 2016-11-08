@@ -1,6 +1,8 @@
 table {
-    width: 100%;
+    width: 90%;
+    max-width: 1000px;
     font-size: 10px;
+    margin: 20px;
 }
 
 thead {
@@ -16,7 +18,7 @@ thead {
 td {
     padding: 5px;
     border-bottom: 1px solid darkorchid;
-    text-align: center;
+    text-align: right;
 }
 
 td:first-child {
@@ -34,6 +36,17 @@ tr:nth-child(even) {
 
 .graph {
     width: 75%;
+    min-width: 500px;
+    max-width: 1000px;
     margin: 20px;
+}
+
+h2 {
+    margin: 15px;
+    color: darkturquoise;
+}
+
+p {
+    margin: 15px;
 }
 

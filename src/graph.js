@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-var {Bar} = require("react-chartjs");
+var LineChart = require("react-chartjs").Line;
 
 class Graph extends Component {
 
@@ -11,13 +11,15 @@ class Graph extends Component {
                 return this.props.results[location] ? this.props.results[location][language] : null
             });
             return {
-                type: 'bar',
+                type: 'line',
                 label: language,
-                backgroundColor: 'rgba(220,220,220,0.2)',
+                fillColor: 'rgba(220,220,220,0.2)',
+                strokeColor: 'rgba(153,50,204,0.2)',
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
                 data: data,
-                borderColor: 'rgba(255,99,132,0.2)',
-                borderWidth: 1,
-                yAxisID: "y-axis-1"
             }
         });
 
@@ -27,50 +29,14 @@ class Graph extends Component {
         };
 
         var chartOptions = {
-            title: {
-                display: true,
-                text: '# of Job Postings by Programming Language'
-            },
-            tooltips: {
-                mode: 'index',
-                intersect: false,
-                backgroundColor: 'rgba(255,99,132,0.2)'
-            },
             responsive: true,
-            legend: {
-                display: true,
-            },
-            hover: {
-                animationDuration: 600
-            },
-            scales: {
-                xAxes: [{
-                    type: "linear",
-                    display: true,
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Location'
-                    },
-                    categoryPercentage: 0.8,
-                    barPercentage: 0,
-                    stacked: true
-                }],
-                yAxes: [{
-                    type: "linear",
-                    display: true,
-                    position: "left",
-                    scaleLabel: {
-                        display: true,
-                        labelString: '# postings'
-                    },
-                    stacked: true
-                }]
-            }
+            // legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"><%if(datasets[i].label){%><%=datasets[i].label%><%}%></span></li><%}%></ul>",
         };
 
         return (
             <div className="graph">
-                <Bar
+                <h2>Total Postings</h2>
+                <LineChart
                     data={chartData}
                     options={chartOptions}
                 />
