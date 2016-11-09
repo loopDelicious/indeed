@@ -131,34 +131,33 @@ class Graph extends Component {
         //         data: sql
         //     }]
         // };
-
-        var seattle = this.props.results['Seattle'].languages.map( (language) => {
-            return this.props.results['Seattle'] ? this.props.results['Seattle'][language] : null
-        });
-        var sanfrancisco = this.props.results['San Francisco'].languages.map( (language) => {
-            return this.props.results['San Francisco'] ? this.props.results['San Francisco'][language] : null
-        });
-        var losangeles = this.props.results['Los Angeles'].languages.map( (language) => {
-            return this.props.results['Los Angeles'] ? this.props.results['Los Angeles'][language] : null
-        });
-        var chicago = this.props.results['Chicago'].languages.map( (language) => {
-            return this.props.results['Chicago'] ? this.props.results['Chicago'][language] : null
-        });
-        var denver = this.props.results['Denver'].languages.map( (language) => {
-            return this.props.results['Denver'] ? this.props.results['Denver'][language] : null
-        });
-        var austin = this.props.results['Austin'].languages.map( (language) => {
-            return this.props.results['Austin'] ? this.props.results['Austin'][language] : null
-        });
-        var newyorkcity = this.props.results['New York City'].languages.map( (language) => {
-            return this.props.results['New York City'] ? this.props.results['New York City'][language] : null
-        });
-        var boston = this.props.results['Boston'].languages.map( (language) => {
-            return this.props.results['Boston'] ? this.props.results['Boston'][language] : null
-        });
+        var seattle = this.props.results ? this.props.languages.map( (language) => {
+                return this.props.results['Seattle'] ? this.props.results['Seattle'][language] : null
+        }) : null;
+        var sanfrancisco = this.props.results ? this.props.languages.map( (language) => {
+                return this.props.results['San Francisco'] ? this.props.results['San Francisco'][language] : null
+        }) : null;
+        var losangeles = this.props.results ? this.props.languages.map( (language) => {
+                return this.props.results['Los Angeles'] ? this.props.results['Los Angeles'][language] : null
+        }) : null;
+        var chicago = this.props.results ? this.props.languages.map( (language) => {
+                return this.props.results['Chicago'] ? this.props.results['Chicago'][language] : null
+        }) : null;
+        var denver = this.props.results ? this.props.languages.map( (language) => {
+                return this.props.results['Denver'] ? this.props.results['Denver'][language] : null
+        }) : null;
+        var austin = this.props.results ? this.props.languages.map( (language) => {
+                return this.props.results['Austin'] ? this.props.results['Austin'][language] : null
+        }) : null;
+        var newyorkcity = this.props.results ? this.props.languages.map( (language) => {
+                return this.props.results['New York City'] ? this.props.results['New York City'][language] : null
+        }) : null;
+        var boston = this.props.results ? this.props.languages.map( (language) => {
+                return this.props.results['Boston'] ? this.props.results['Boston'][language] : null
+        }) : null;
 
         var chartData = {
-            labels: this.props.locations,
+            labels: this.props.languages,
             type: 'line',
             datasets: [{
                 label: "Seattle",
@@ -171,8 +170,8 @@ class Graph extends Component {
                 data: seattle
             }, {
                 label: "San Francisco",
-                fillColor: "rgba(153,255,51,0.4)",
-                strokeColor: "rgba(153,255,51,1)",
+                fillColor: "rgba(0,206,209,0.4)",
+                strokeColor: "rgba(0,206,209,1)",
                 pointColor: "rgba(220,220,220,1)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
@@ -180,8 +179,8 @@ class Graph extends Component {
                 data: sanfrancisco
             }, {
                 label: "Los Angeles",
-                fillColor: "rgba(153,255,51,0.4)",
-                strokeColor: "rgba(153,255,51,1)",
+                fillColor: "rgba(154,205,50,0.4)",
+                strokeColor: "rgba(154,205,50,1)",
                 pointColor: "rgba(220,220,220,1)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
@@ -189,8 +188,8 @@ class Graph extends Component {
                 data: losangeles
             }, {
                 label: "Chicago",
-                fillColor: "rgba(200,20,20,0.4)",
-                strokeColor: "rgba(200,20,20,0,1)",
+                fillColor: "rgba(0,0,255,0.4)",
+                strokeColor: "rgba(0,0,255,0,1)",
                 pointColor: "rgba(220,220,220,1)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
@@ -199,8 +198,8 @@ class Graph extends Component {
             }, {
                 label: "Denver",
                 fillColor: "rgba(255,153,0,0.4)",
-                strokeColor: "rgba(255,153,0,1)",
-                pointColor: "rgba(220,220,220,1)",
+                strokeColor: "rgba(153,50,204,1)",
+                pointColor: "rgba(153,50,204,1)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
@@ -216,8 +215,8 @@ class Graph extends Component {
                 data: austin
             }, {
                 label: "New York City",
-                fillColor: "rgba(255,153,0,0.4)",
-                strokeColor: "rgba(255,153,0,1)",
+                fillColor: "rgba(255,50,147,0.4)",
+                strokeColor: "rgba(255,50,147,1)",
                 pointColor: "rgba(220,220,220,1)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
@@ -225,8 +224,8 @@ class Graph extends Component {
                 data: newyorkcity
             }, {
                 label: "Boston",
-                fillColor: "rgba(255,153,0,0.4)",
-                strokeColor: "rgba(255,153,0,1)",
+                fillColor: "rgba(255,215,0,0.4)",
+                strokeColor: "rgba(255,215,0,1)",
                 pointColor: "rgba(220,220,220,1)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",

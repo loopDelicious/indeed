@@ -44,6 +44,10 @@ tr:nth-child(even) {
 h2 {
     margin: 15px;
     color: darkturquoise;
+    color: deeppink;
+    color: gold;
+    color: yellowgreen;
+    color: blue;
 }
 
 p {
