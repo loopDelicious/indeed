@@ -13,33 +13,32 @@ For more details about the data: link to medium
 
 ### For Development
 
-   Start React watcher
+Start React watcher
    
    `$ npm start`  
 
-   Run server
+Run server
    
    `$ nodemon proxy.js`
    
-   Start Redis to cache results every hour
+Start Redis to cache results every hour
    
    `$ redis-server`
    
 ### For Deployment
 
-    Secure shell into remote server
+Secure shell into remote server
     
-    Install dependencies
-    
-    `npm install -g react-scripts`
-    
-    `npm install -g forever`
-    
-    Start Redis and daemonize server
-    
-    `sudo apt-get install redis-server`
-    
-    `forever start src/proxy.js`
-    
+Install dependencies
+
+   `# npm install -g react-scripts`
+   
+   `# npm install -g forever`
+   
+Start Redis and daemonize server
+
+   `# sudo apt-get install redis-server`
+   
+   `# forever start src/proxy.js`
    
   
