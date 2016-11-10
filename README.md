@@ -6,9 +6,9 @@ Deployed using Digital Ocean: link to site
 
 For more details about the data: link to medium
 
-![Chart](https://github.com/loopDelicious/dataviz/blob/master/radar.png)
+![Chart](https://github.com/loopDelicious/indeed/blob/master/radar.png)
 
-![Chart](https://github.com/loopDelicious/dataviz/blob/master/bar.png)
+![Chart](https://github.com/loopDelicious/indeed/blob/master/bar.png)
 
 ### For Development
 
