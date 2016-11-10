@@ -12,13 +12,14 @@ class App extends Component {
     locations = ['Seattle', 'San Francisco', 'Los Angeles', 'Chicago', 'Denver', 'Austin', 'New York City', 'Boston'];
 
     state = {};
+    count=0;
 
-    langs = [];
-
-    componentDidMount = () => {
-
+    componentWillMount = ()  =>{
         // library is mutating original language array
         this.langs = JSON.parse(JSON.stringify(this.languages));
+    };
+
+    componentDidMount = () => {
 
         var site_type = "employer";  // Site type. To show only jobs from job boards use "jobsite". For jobs from direct employer websites use "employer".
         var job_type = "fulltime";  // 	Job type. Allowed values: "fulltime", "parttime", "contract", "internship", "temporary".
@@ -62,6 +63,7 @@ class App extends Component {
                         }
                         this.state[location][language] = res.totalResults;
 
+                        this.count++;
                         this.setState(this.state);
                     }
                 });
@@ -91,8 +93,8 @@ class App extends Component {
 
         return (
             <div className="App">
-                <h2>Job Postings by Programming Language</h2>
-                <p>Number of job postings within the last 15 days on indeed.com (results cached daily). Full time positions from direct employer websites.  </p>
+                <h2>Software Engineering Jobs by Programming Language</h2>
+                <p>Raw number of job postings within the last 15 days on indeed.com (results cached daily). Full time positions from direct employer websites.  </p>
                 <table>
                     <thead>
                         <tr>
@@ -112,11 +114,12 @@ class App extends Component {
                     results={this.state}
                 />
 
-                <City
+                {this.count === this.languages.length * this.locations.length ?
+                    <City
                     languages={this.langs}
                     locations={this.locations}
                     results={this.state}
-                />
+                    /> : null}
             </div>
         );
     }
