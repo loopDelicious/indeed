@@ -107,19 +107,20 @@ class App extends Component {
                         {rows}
                     </tbody>
                 </table>
-
+                <hr />
                 <Graph
                     languages={this.languages}
                     locations={this.locations}
                     results={this.state}
                 />
-
+                <hr />
                 {this.count === this.languages.length * this.locations.length ?
                     <City
                     languages={this.langs}
                     locations={this.locations}
                     results={this.state}
                     /> : null}
+                <hr />
             </div>
         );
     }

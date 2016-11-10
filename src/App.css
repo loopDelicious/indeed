@@ -61,7 +61,17 @@ tr:nth-child(even) {
     margin: 20px;
 }
 
+hr {
+    border-top: 1px solid whitesmoke;
+    margin-bottom: 10px;
+}
+
 h2 {
+    margin: 15px;
+    color: darkturquoise;
+}
+
+h3 {
     margin: 15px;
     color: darkturquoise;
 }
@@ -82,6 +92,11 @@ p {
     width: 10px;
     float: left;
     margin-right: 5px;
+}
+
+.city-selection {
+    background-color: paleturquoise;
+    margin: 5px;
 }
 
 

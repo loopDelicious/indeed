@@ -147,7 +147,7 @@ class Graph extends Component {
         };
 
         return (
-            <div className="graph clearfix">
+            <div className="bar graph clearfix">
                 <h2>Software Engineering Jobs by Programming Language</h2>
                 <BarChart
                     ref="chart"

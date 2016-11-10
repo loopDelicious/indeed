@@ -3,54 +3,57 @@ var RadarChart = require("react-chartjs").Radar;
 
 class City extends Component {
 
+    city1 = "San Francisco";
+    city2 = "Seattle";
+
+    state = {
+        city1: this.city1,
+        city2: this.city2
+    };
+
+    handleSelection1 = (event) => {
+        this.setState({
+            city1: event.target.value
+        });
+    };
+
+    handleSelection2 = (event) => {
+        this.setState({
+            city2: event.target.value
+        });
+    };
+
     render() {
 
-        var seattle = this.props.languages.map( (language) => {
-            return this.props.results['Seattle'] ? this.props.results['Seattle'][language] : null
+        var city1data = this.props.languages.map( (language) => {
+            return this.props.results[this.state.city1] ? this.props.results[this.state.city1][language] : null
         });
-        var sanfrancisco = this.props.languages.map( (language) => {
-            return this.props.results['San Francisco'] ? this.props.results['San Francisco'][language] : null
-        });
-        var losangeles = this.props.languages.map( (language) => {
-            return this.props.results['Los Angeles'] ? this.props.results['Los Angeles'][language] : null
-        });
-        var chicago = this.props.languages.map( (language) => {
-            return this.props.results['Chicago'] ? this.props.results['Chicago'][language] : null
-        });
-        var denver = this.props.languages.map( (language) => {
-            return this.props.results['Denver'] ? this.props.results['Denver'][language] : null
-        });
-        var austin = this.props.languages.map( (language) => {
-            return this.props.results['Austin'] ? this.props.results['Austin'][language] : null
-        });
-        var newyorkcity = this.props.languages.map( (language) => {
-            return this.props.results['New York City'] ? this.props.results['New York City'][language] : null
-        });
-        var boston = this.props.languages.map( (language) => {
-            return this.props.results['Boston'] ? this.props.results['Boston'][language] : null
+
+        var city2data = this.props.languages.map( (language) => {
+            return this.props.results[this.state.city2] ? this.props.results[this.state.city2][language] : null
         });
 
         var chartData = {
             labels: this.props.languages,
             type: 'radar',
             datasets: [{
-                label: "Chicago",
+                label: this.state.city1,
                 fillColor: "rgba(0,206,209,0.4)",
                 strokeColor: "rgba(0,206,209,1)",
                 pointColor: "rgba(220,220,220,1)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
-                data: chicago
+                data: city1data
             }, {
-                label: "Boston",
+                label: this.state.city2,
                 fillColor: "rgba(255,50,147,0.4)",
                 strokeColor: "rgba(255,50,147,1)",
                 pointColor: "rgba(220,220,220,1)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
-                data: boston
+                data: city2data
             }]
         };
 
@@ -59,12 +62,27 @@ class City extends Component {
         };
 
         return (
-            <div className="graph">
+            <div className="radar graph">
                 <h2>City Comparison</h2>
-                <p>Raw popularity of languages - the shape of the radar indicates proportional differences between cities.</p>
+                <p>Raw popularity of programming languages - select 2 cities to compare.</p>
+                <p>Does not account for population variance, the shape of the radar indicates proportional differences between cities.</p>
+                <select className="city-selection" ref="city1" onChange={this.handleSelection1.bind(this)}>
+                    { this.props.locations.map((location) => {
+                        return <option value={location} selected={location == this.city1 ? 'selected' : null }>{location}</option>
+                        })
+                    }
+                </select>
+                <select className="city-selection" ref="city2" onChange={this.handleSelection2.bind(this)}>
+                    { this.props.locations.map((location) => {
+                        return <option value={location} selected={location == this.city2 ? 'selected' : null }>{location}</option>
+                    })
+                    }
+                </select>
+                <h3>{this.state.city1} vs. {this.state.city2}</h3>
                 <RadarChart
                     data={chartData}
                     options={chartOptions}
+                    redraw
                 />
             </div>
         )
