@@ -6,6 +6,8 @@ import City from './city.js';
 
 class App extends Component {
 
+    host = window.location.hostname;
+
     // languages = ['Python', 'Java', 'JavaScript', 'Ruby', 'PHP', 'C', 'C++', 'C#', '.NET', 'Go', 'Scala', 'Objective-C', 'Swift', 'iOS', 'Android', 'R', 'SQL', 'HTML', 'CSS'];
     // remove lisp, elm, rust, VB, Golang from full set
     languages = ['Python', 'Java', 'JavaScript', 'Ruby', 'C', 'C++', 'C#', 'SQL'];  // test set
@@ -36,7 +38,7 @@ class App extends Component {
             var query = "software engineer " + language;
             this.locations.forEach( (location) => {
                 $.ajax({
-                    url: "http://localhost:5000",
+                    url: "http://" + this.host + ":5000",
                     method: 'get',
                     data: {
                         q: query,
@@ -94,7 +96,7 @@ class App extends Component {
         return (
             <div className="App">
                 <h2>Software Engineering Jobs by Programming Language</h2>
-                <p>Raw number of job postings within the last 15 days on indeed.com (results cached daily). Full time positions from direct employer websites.  </p>
+                <p>Raw number of job postings within the last 15 days on indeed.com (results cached every hour). Full time positions from direct employer websites.  </p>
                 <table>
                     <thead>
                         <tr>
@@ -108,12 +110,14 @@ class App extends Component {
                     </tbody>
                 </table>
                 <hr />
+                <div id="all-cities"></div>
                 <Graph
                     languages={this.languages}
                     locations={this.locations}
                     results={this.state}
                 />
                 <hr />
+                <div id="city-compare"></div>
                 {this.count === this.languages.length * this.locations.length ?
                     <City
                     languages={this.langs}

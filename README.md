@@ -1,14 +1,15 @@
 #### Regional Differences in Programming Languages
 
-Data visualization using react-chartjs to illustrate the most popular programming languages by US city according to Indeed.com job search results from the previous 15 days.
+Data visualization using React-Chartjs to illustrate the most popular programming languages by US city according to Indeed.com job search results from the previous 15 days.
 
-Deployed using Digital Ocean: link to site
+Deployed using Digital Ocean: [hello](http://indeed.meowsergirl.com/)
 
 For more details about the data: link to medium
 
-![Chart](https://github.com/loopDelicious/indeed/blob/master/radar.png)
+[![Chart][(https://github.com/loopDelicious/indeed/blob/master/radar.png)](http://www.indeed.meowsergirl.com/#city-compare)
 
-![Chart](https://github.com/loopDelicious/indeed/blob/master/bar.png)
+[![Chart][(https://github.com/loopDelicious/indeed/blob/master/bar.png)](http://www.indeed.meowsergirl.com/#all-cities)
+
 
 ### For Development
 
