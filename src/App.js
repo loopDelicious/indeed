@@ -96,7 +96,7 @@ class App extends Component {
         return (
             <div className="App">
                 <h2>Software Engineering Jobs by Programming Language</h2>
-                <p>Raw number of job postings within the last 15 days on indeed.com (results cached every hour). Full time positions from direct employer websites.  </p>
+                <p>Raw number of job postings within the last 15 days on indeed.com (results updated every hour). Full time positions from direct employer websites.  </p>
                 <table>
                     <thead>
                         <tr>
