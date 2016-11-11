@@ -35,6 +35,14 @@ Install dependencies
    
    `# npm install -g forever`
    
+Update repository - or clone if the first time
+
+   `# git clone`
+   
+Build react files
+
+   `# npm run build`
+
 Start Redis and daemonize server
 
    `# sudo apt-get install redis-server`
