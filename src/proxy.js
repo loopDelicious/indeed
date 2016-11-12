@@ -1,6 +1,6 @@
 var express = require('express');
 var request = require('request');
-var key = require('./secrets.js');
+var key = require('../secrets.js');
 var redis = require('redis');
 var client = redis.createClient();
 
