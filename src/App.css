@@ -17,12 +17,58 @@
     clear: both;
 }
 
+.width {
+    width: 870px;
+    margin: 0 auto;
+}
+
+#intro {
+    background-color: darkturquoise;
+    height: 300px;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    flex-direction: column;
+}
+
+#intro h2 {
+    color: white;
+    font-size: 48px;
+    text-align: left;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+#intro h3 {
+    font-size: 16px;
+    color: white;
+    text-align: left;
+    font-weight: normal;
+}
+
+#intro a {
+    color: white;
+}
+
+#intro a:hover {
+    color: whitesmoke;
+}
+
+.section {
+    margin: 40px 0;
+}
+
+.spacer {
+    margin: 0 10px;
+}
 
 table {
     width: 80%;
     max-width: 1000px;
     font-size: 10px;
-    margin: 20px;
+    margin: 20px 0;
 }
 
 thead {
@@ -47,7 +93,7 @@ td:first-child {
 }
 
 tr:hover {
-    background-color: #f5f5f5;
+    background-color: orchid;
 }
 
 tr:nth-child(even) {
@@ -55,10 +101,9 @@ tr:nth-child(even) {
 }
 
 .graph {
-    width: 70%;
     min-width: 500px;
     max-width: 1000px;
-    margin: 20px;
+    margin: 20px 0;
 }
 
 hr {
@@ -67,17 +112,17 @@ hr {
 }
 
 h2 {
-    margin: 15px;
+    margin: 30px 0;
     color: darkturquoise;
 }
 
 h3 {
-    margin: 15px;
+    margin: 30px 0;
     color: darkturquoise;
 }
 
 p {
-    margin: 15px;
+    margin: 15px 0;
 }
 
 /*legend-styling*/

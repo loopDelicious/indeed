@@ -95,36 +95,49 @@ class App extends Component {
 
         return (
             <div className="App">
-                <h2>Software Engineering Jobs by Programming Language</h2>
-                <p>Raw number of job postings within the last 15 days on indeed.com (results updated every hour). Full time positions from direct employer websites.  </p>
-                <table>
-                    <thead>
-                        <tr>
-                            <td />
-                            {columnHeaders}
-                        </tr>
-                    </thead>
 
-                    <tbody>
-                        {rows}
-                    </tbody>
-                </table>
-                <hr />
-                <div id="all-cities"></div>
-                <Graph
-                    languages={this.languages}
-                    locations={this.locations}
-                    results={this.state}
-                />
-                <hr />
-                <div id="city-compare"></div>
-                {this.count === this.languages.length * this.locations.length ?
-                    <City
-                    languages={this.langs}
-                    locations={this.locations}
-                    results={this.state}
-                    /> : null}
-                <hr />
+                <div id="intro">
+                    <div className="width">
+                        <h2>Software Engineering Jobs by Programming Language</h2>
+                        <h3>
+                            <i className="fa fa-medium fa-lg" /> Read on <a href="https://medium.com/@joycelin.codes/always-be-coding-regional-differences-in-programming-languages-9957785dd4e6#.oq7bf9wki">Medium</a>
+                            <span className="spacer"> | </span>
+                            <i className="fa fa-github fa-lg" /> Fork me on <a href="https://github.com/loopDelicious/indeed">Github</a>
+                        </h3>
+
+                    </div>
+                </div>
+                <div className="width">
+                    <p className="section">Raw number of job postings within the last 15 days on indeed.com (results updated every hour). Full time positions from direct employer websites.  </p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td />
+                                {columnHeaders}
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {rows}
+                        </tbody>
+                    </table>
+                    <hr />
+                    <div id="all-cities"></div>
+                    <Graph
+                        languages={this.languages}
+                        locations={this.locations}
+                        results={this.state}
+                    />
+                    <hr />
+                    <div id="city-compare"></div>
+                    {this.count === this.languages.length * this.locations.length ?
+                        <City
+                        languages={this.langs}
+                        locations={this.locations}
+                        results={this.state}
+                        /> : null}
+                    <hr />
+                </div>
             </div>
         );
     }
