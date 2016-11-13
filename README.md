@@ -2,9 +2,9 @@
 
 Data visualization using React-Chartjs to illustrate the most popular programming languages by US city according to Indeed.com job search results from the previous 15 days.
 
-Deployed using NGINX and Digital Ocean: http://indeed.meowsergirl.com/
+[Deployed](http://indeed.meowsergirl.com/) using NGINX and Digital Ocean
 
-For more details about the data: link to medium
+[Blog post on Medium](https://medium.com/@joycelin.codes/always-be-coding-regional-differences-in-programming-languages-9957785dd4e6#.oq7bf9wki)
 
 [![Chart](https://github.com/loopDelicious/indeed/blob/master/radar.png)](http://www.indeed.meowsergirl.com/#city-compare)
 
