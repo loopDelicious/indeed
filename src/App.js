@@ -9,7 +9,7 @@ class App extends Component {
     host = window.location.hostname;
 
     // languages = ['Python', 'Java', 'JavaScript', 'Ruby', 'C', 'C++', 'C#', 'SQL'];  // test set
-    languages = ['Python', 'Java', 'JavaScript', 'Ruby', 'PHP', 'C', 'C++', 'C#', '.NET', 'Go', 'Scala', 'Objective-C', 'Swift', 'iOS', 'Android', 'R', 'SQL', 'HTML', 'CSS'];
+    languages = ['Python', 'Java', 'JavaScript', 'Ruby', 'PHP', 'C', 'C++', 'C#', '.NET', 'Go', 'Scala', 'Objective-C', 'Swift', 'iOS', 'Android', 'R', 'SQL', 'HTML', 'CSS', 'React', 'Angular'];
     // remove lisp, elm, rust, VB, Golang from full set
     locations = ['Seattle', 'San Francisco', 'Los Angeles', 'Chicago', 'Denver', 'Austin', 'New York City', 'Boston'];
 
