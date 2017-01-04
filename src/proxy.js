@@ -8,7 +8,7 @@ var app = express();
 
 // create a proxy so server side can access indeed API
 
-// allow CORS access to indeed domain
+// allow CORS access
 // from https://blog.javascripting.com/2015/01/17/dont-hassle-with-cors/
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -16,7 +16,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use('/', function(req, res) {
+app.use('/indeed', function(req, res) {
 
     var url = 'http://api.indeed.com/ads/apisearch?publisher=' + key + '&' + req.url.slice(2);
     res.header("Content-Type", "application/json");

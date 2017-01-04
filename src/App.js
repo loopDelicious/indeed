@@ -6,8 +6,6 @@ import City from './city.js';
 
 class App extends Component {
 
-    host = window.location.hostname;
-
     // languages = ['Python', 'Java', 'JavaScript', 'Ruby', 'C', 'C++', 'C#', 'SQL'];  // test set
     languages = ['Python', 'Java', 'JavaScript', 'Ruby', 'PHP', 'C', 'C++', 'C#', '.NET', 'Go', 'Scala', 'Objective-C', 'Swift', 'iOS', 'Android', 'R', 'SQL', 'HTML', 'CSS', 'React', 'Angular'];
     // remove lisp, elm, rust, VB, Golang from full set
@@ -38,7 +36,7 @@ class App extends Component {
             var query = "software engineer " + language;
             this.locations.forEach( (location) => {
                 $.ajax({
-                    url: "http://" + this.host + ":5000", // talk to server on current page host at port 5000
+                    url: '/indeed', // talk to server on current page host at port 5000
                     method: 'get',
                     data: {
                         q: query,
