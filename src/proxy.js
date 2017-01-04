@@ -18,7 +18,7 @@ app.use(function(req, res, next) {
 
 app.use('/indeed', function(req, res) {
 
-    var url = 'http://api.indeed.com/ads/apisearch?publisher=' + key + '&' + req.url.slice(2);
+    var url = 'http://api.indeed.com/ads/apisearch?publisher=' + key + '&' + req.url.slice(8);
     res.header("Content-Type", "application/json");
 
     // check if results are in redis
