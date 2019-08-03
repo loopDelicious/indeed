@@ -1,3 +1,7 @@
+# Indeed
+
+![GitHub](https://img.shields.io/github/license/loopDelicious/indeed)
+
 #### Regional Differences in Programming Languages
 
 Data visualization using React-Chartjs to illustrate the most popular programming languages by US city according to Indeed.com job search results from the previous 15 days.
